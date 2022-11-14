@@ -9,7 +9,7 @@ header{
     margin: 35px 0;
 }
 h3 button{
-    color: #E37BE9;
+    color: #5E00A3;
     background-color: transparent;
     border: none;
     outline: none;
@@ -27,8 +27,9 @@ h3 button{
     width: 170px;
     cursor: pointer;
 }
-.starterPage button:hover{
+.startPage button:hover{
     box-shadow: 10px 5px 5px #eeeeee;
+    background-color: #DA7DEC; 
 }
 .startPage {
     display:flexbox;
