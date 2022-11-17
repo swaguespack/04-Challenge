@@ -1,5 +1,5 @@
 //Start Page Global Variables
-var startBtn = document.getElementId("startBtn");
+var startBtn = document.getElementById("startBtn");
 var homeContainer = document.getElementById("homeContainer");
 var quizContainer = document.getElementById("quizContainer");
 var questionText = document.getElementById("questionText");
@@ -61,32 +61,23 @@ var quizQuestions = [{
     correctAnswer: 3 }
 ];
 
-//Removes Start Page Elements
-/*startBtn.addEventListener("click"), event =>{
-    timer();
-    startBtn.remove();
-    startTitle.remove();
-    startParagraph.remove(); 
+
+// Remove Home Page Container & Start Quiz
+startBtn.addEventListener("click",function() {
+    homeContainer.remove();
+    quizContainer.style.display = "block";
     startQuizQuestions();
-};*/
-
-//Start Quiz
-startBtn.addEventListener("click",function startQuizQuestions() {
-    startBtn.remove();
-    startTitle.remove();
-    startParagraph.remove();
-    questionText.textContent = quizQuestions[i].questions;
-    choiceA.textContent = quizQuestions[i].answerChoices[0];
-    choiceB.textContent = quizQuestions[i].answerChoices[1];
-    choiceC.textContent = quizQuestions[i].answerChoices[2];
-    choiceD.textContent = quizQuestions[i].answerChoices[3];
-
 });
 
 
 //Display quiz questions and answer choices
-
-
+function startQuizQuestions(){
+questionText.textContent = quizQuestions[i].question;
+choiceA.textContent = quizQuestions[i].answerChoices[0];
+choiceB.textContent = quizQuestions[i].answerChoices[1];
+choiceC.textContent = quizQuestions[i].answerChoices[2];
+choiceD.textContent = quizQuestions[i].answerChoices[3];
+};
 
 //Move forward through questions
 /*choiceA.addEventListener('click',function(event){
@@ -95,8 +86,4 @@ startBtn.addEventListener("click",function startQuizQuestions() {
     console.log(correctAnswer + " is the correct answer!");
 
 
-});
-
-
-
-
+});*/
