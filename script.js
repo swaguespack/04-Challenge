@@ -10,15 +10,14 @@ var choiceD = document.getElementById("choiceD");
 var score = 0;
 let i =0;
 /*
+   //Points calculator
+    var points = function(){
+    score = score + 10;
+    console.log("You have " + score + " points!");
+    };
 var time_remaining = 75;
 var timerInterval;
 var end = false;
-*/
-//Points calculator
-/*var points = function(){
-    score = score + 10;
-    console.log("You have " + score + " points!");
-}
 var timer = function() {
      timerInterval = setInterval(() => {
         if (end === false) {
@@ -39,7 +38,7 @@ var timer = function() {
 
 //Array of quiz questions
 var quizQuestions = [{
-    question: "Commonly used data types DO NOT include:",
+    questions: "Commonly used data types DO NOT include:",
     answerChoices: ["A: strings", "B: booleans", "C: alerts", "D: numbers"],
     correctAnswer: 2 },
 {
@@ -72,18 +71,108 @@ startBtn.addEventListener("click",function() {
 
 //Display quiz questions and answer choices
 function startQuizQuestions(){
-questionText.textContent = quizQuestions[i].question;
+questionText.textContent = quizQuestions[i].questions;
 choiceA.textContent = quizQuestions[i].answerChoices[0];
 choiceB.textContent = quizQuestions[i].answerChoices[1];
 choiceC.textContent = quizQuestions[i].answerChoices[2];
 choiceD.textContent = quizQuestions[i].answerChoices[3];
 };
 
-//Move forward through questions
-/*choiceA.addEventListener('click',function(event){
+//AddEventListener for all answer choices to move through questions
+
+//Answer Choice A
+choiceA.addEventListener('click',function(event){
     event.stopPropagation();
     correctAnswer= quizQuestions[i].correctAnswer;
-    console.log(correctAnswer + " is the correct answer!");
 
+    //Check if user input is correct answer
+    if (0 === correctAnswer){
+        document.getElementById("userResponse").innerHTML = "That is Correct!";
+        document.getElementById("button").style.background='#13E348';
+    
 
-});*/
+}else{
+    document.getElementById("userResponse").innerHTML = "Incorrect";
+}
+if (i>= quizQuestions.length -1){
+quiz_over();
+} else {
+    i++
+    startQuizQuestions();
+};
+
+});
+
+//Answer Choice B
+choiceB.addEventListener('click',function(event){
+    event.stopPropagation();
+    correctAnswer= quizQuestions[i].correctAnswer;
+
+    //Check if user input is correct answer
+    if (1 === correctAnswer){
+        document.getElementById("userResponse").innerHTML = "That is Correct!";
+    
+
+}else{
+    document.getElementById("userResponse").innerHTML = "Incorrect";
+}
+if (i>= quizQuestions.length -1){
+    quiz_Over();
+} else {
+    i++
+    startQuizQuestions();
+};
+
+});
+
+//Answer Choice C
+choiceC.addEventListener('click',function(event){
+    event.stopPropagation();
+    correctAnswer= quizQuestions[i].correctAnswer;
+
+    //Check if user input is correct answer
+    if (2 === correctAnswer){
+        document.getElementById("choiceC").style.background='#13E348';
+        document.getElementById("userResponse").innerHTML = "That is Correct!";
+
+}else{
+    document.getElementById("userResponse").innerHTML = "Incorrect";
+}
+if (i>= quizQuestions.length -1){
+quiz_Over();
+} else {
+    i++
+    startQuizQuestions();
+};
+
+});
+
+//Answer Choice D
+choiceD.addEventListener('click',function(event){
+    event.stopPropagation();
+    correctAnswer= quizQuestions[i].correctAnswer;
+
+    //Check if user input is correct answer
+    if (3 === correctAnswer){
+        document.getElementById("userResponse").innerHTML = "That is Correct!";
+    
+
+}else{
+    document.getElementById("userResponse").innerHTML = "Incorrect";
+}
+if (i>= quizQuestions.length -1){
+quiz_Over();
+
+} else {
+    i++
+    startQuizQuestions();
+};
+
+});
+
+//Quiz Over
+function quiz_Over(){
+    quizContainer.remove();
+    document.getElementById("endGame").style.display="block";
+    
+};
