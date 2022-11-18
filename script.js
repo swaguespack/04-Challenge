@@ -7,12 +7,14 @@ var choiceA = document.getElementById("choiceA");
 var choiceB = document.getElementById("choiceB");
 var choiceC = document.getElementById("choiceC");
 var choiceD = document.getElementById("choiceD");
+var highScores=[];
+var output="";
 var score = 0;
 let i =0;
 
 //Timer Variables
 var time_remaining = 75;
-time_start= true;
+var time_start= true;
 var end = false;
 var countDownTimer = document.getElementById("countDownTimer");
 
@@ -59,6 +61,8 @@ startBtn.addEventListener("click",function() {
     homeContainer.remove();
     quizContainer.style.display = "block";
     countDownTimer.style.display="block";
+    document.getElementById("score").style.display="block";
+    document.getElementById("scoreTrack").style.display="block";
     setCountDown();
     startQuizQuestions();
     end= true;

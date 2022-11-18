@@ -8,6 +8,19 @@ header{
     padding: 10px 80px;
     margin: 35px 0;
 }
+header input{
+    color: #5E00A3;
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+header div{
+    color:#000000;
+    font-size: 16px;
+    float: left;
+}
 body{
     display:flexbox;
     text-align: center;
@@ -18,7 +31,9 @@ body{
 #timer{
     color:#5E00A3;
     float: right;
+    font-size: 16px;
 }
+
 body button{
     background-color: #5E00A3;
     border-radius: 10px;
@@ -30,13 +45,7 @@ body button{
     cursor: pointer;
     
 }
-h3 button{
-    color: #5E00A3;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-}
+
 br{
     display:block;
     content:"";
