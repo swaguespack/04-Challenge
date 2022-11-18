@@ -12,7 +12,7 @@ var output="";
 var score = 0;
 let i =0;
 
-//Timer Variables
+//Timer Variables and Timer
 var time_remaining = 75;
 var time_start= true;
 var end = false;
@@ -58,10 +58,10 @@ var quizQuestions = [{
 
 // Change Display of Home Page Container & Start Quiz
 startBtn.addEventListener("click",function() {
-    document.getElementById("homeContainer").style.display="none";
+    homeContainer.style.display="none";
     quizContainer.style.display = "block";
     countDownTimer.style.display="block";
-    document.getElementById("score").style.display="block";
+    document.getElementById("score").innerHTML="Score " + score;
     document.getElementById("scoreTrack").style.display="block";
     setCountDown();
     startQuizQuestions();
@@ -94,6 +94,7 @@ choiceA.addEventListener('click',function(event){
             }, 500)
 
         score = score + 10;
+        document.getElementById("score").innerHTML="Score " + score;
 
 }else{
     time_remaining -= 10;
@@ -125,6 +126,7 @@ choiceB.addEventListener('click',function(event){
             }, 500)
 
         score = score + 10;
+        document.getElementById("score").innerHTML="Score " + score;
     
 }else{
     time_remaining -= 10;
@@ -155,6 +157,7 @@ choiceC.addEventListener('click',function(event){
             }, 500)
 
         score = score + 10;
+        document.getElementById("score").innerHTML="Score " + score;
             
 
 }else{
@@ -187,6 +190,7 @@ choiceD.addEventListener('click',function(event){
             }, 500)
         
         score = score + 10;
+        document.getElementById("score").innerHTML="Score " + score;
 }else{
     time_remaining -= 10;
     document.getElementById("userResponse").innerHTML = "Incorrect";
@@ -252,7 +256,6 @@ function clearScores(){
 
 //Clear page
 function clearQuiz(){
-startQuizQuestions();
 time_remaining=75;
 time_start=true;
 end=false;
