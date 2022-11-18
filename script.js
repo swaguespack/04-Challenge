@@ -14,15 +14,15 @@ let i =0;
 
 //Timer Variables and Timer
 var time_remaining = 75;
-var time_start= true;
-var end = false;
+var time= true;
+var timerStart = false;
 var countDownTimer = document.getElementById("countDownTimer");
 
 //Count down by seconds
 var countDown = setInterval(setCountDown, 1000);
 
 function setCountDown(){
-    if(end)
+    if(timerStart)
     time_remaining--;
     if(time_remaining<=0){
         quiz_Over();
@@ -65,7 +65,7 @@ startBtn.addEventListener("click",function() {
     document.getElementById("scoreTrack").style.display="block";
     setCountDown();
     startQuizQuestions();
-    end= true;
+    timerStart= true;
 });
 
 
@@ -210,7 +210,7 @@ quiz_Over();
 
 //Quiz Over
 function quiz_Over(){
-    quizContainer.remove();
+    document.getElementById("quizContainer").style.display="none";
     document.getElementById("countDownTimer").style.display="none";
     document.getElementById("scoreTrack").style.display="none";
     document.getElementById("userResponse").innerHTML="";
@@ -226,7 +226,7 @@ function submitScore(){
 
 function viewHighScores(){
     document.getElementById("endGame").style.display= "none";
-    document.getElementById("homeContainer").style.display= "none";
+    document.getElementById("quizContainer").style.display= "none";
     document.getElementById("highScoresPage").style.display="block";
 
     output="";
@@ -245,6 +245,8 @@ function goHome(){
     countDownTimer.style.display="block";
     document.getElementById("score").style.display="block";
     document.getElementById("scoreTrack").style.display="block";
+    score=0;
+    document.getElementById("score").innerHTML="Score " + score;
     clearQuiz();
 };
 
@@ -256,9 +258,9 @@ function clearScores(){
 
 //Clear page
 function clearQuiz(){
+document.getElementById("initials").value="";
 time_remaining=75;
-time_start=true;
-end=false;
+time=true;
+timerStart=false;
 i=0
-score=0;
 };

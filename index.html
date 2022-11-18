@@ -19,15 +19,16 @@
         </div>
     </header>
 
-    <container>
+    <section>
         <div id=homeContainer class="startPage">
         <h1 id="startTitle"> Coding Quiz Challenge</h1>
         <p id="startParagraph">Try to answer the following code-related questions within the time limit.<br>
         Keep in mind that the incorrect answers will penalize your time by ten seconds!</p>
         <button id="startBtn">Start Quiz</button>
         </div>
-    </container>
+    </section>
 
+    <section>
     <div id="quizContainer" style="display: none">
     <h2 id="questionText"></h2>
     <ul>
@@ -48,7 +49,8 @@
         </div>
     </ul>
     </div>
-</body> 
+</section>
+
 <section id="userResponse"></section>
 
 <div id="endGame" style="display: none">
@@ -63,10 +65,10 @@ Initials: <input type="text" value="" id="initials">
 <div id="highScoresPage" style="display: none">
     <h2> High Scores</h2>
     <div id="highScores"></div>
-    <input type="button" value="Go Back" id="goBack" onclick="goHome()">
+    <input type="button" value="Go Back" onclick="goHome()">
     <input type="button" id="clearHighscores" value ="Clear" onclick="clearScores()">
 </div>
-    
+</body> 
         <script src="script.js"></script>
      
 </html>
