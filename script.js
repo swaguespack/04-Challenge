@@ -9,33 +9,25 @@ var choiceC = document.getElementById("choiceC");
 var choiceD = document.getElementById("choiceD");
 var score = 0;
 let i =0;
+
+//Timer Variables
 var time_remaining = 75;
-/*
-   //Points calculator
-    var points = function(){
-    score = score + 10;
-    console.log("You have " + score + " points!");
-    };
-
-var timerInterval;
+time_start= true;
 var end = false;
-var timer = function() {
-     timerInterval = setInterval(() => {
-        if (end === false) {
-            timer_el.textContent = time_remaining;
-            time_remaining --;
-            return time_remaining;
-        } else {
-            timer_el.textContent = "";
-            clearInterval(timerInterval);
-        }
-    }, 1000);
+var countDownTimer = document.getElementById("countDownTimer");
 
-    console.log("TIMER STARTED")
-    if (end === true){
-        timer_el.textContent = time_remaining;
+//Count down by seconds
+var countDown = setInterval(setCountDown, 1000);
+
+function setCountDown(){
+    if(end)
+    time_remaining--;
+    if(time_remaining<=0){
+        quiz_Over();
+    time_remaining = 0;
     }
-}*/
+    document.getElementById("timer").innerHTML = time_remaining;
+};
 
 //Array of quiz questions
 var quizQuestions = [{
@@ -66,7 +58,10 @@ var quizQuestions = [{
 startBtn.addEventListener("click",function() {
     homeContainer.remove();
     quizContainer.style.display = "block";
+    countDownTimer.style.display="block";
+    setCountDown();
     startQuizQuestions();
+    end= true;
 });
 
 
@@ -208,7 +203,17 @@ quiz_Over();
 //Quiz Over
 function quiz_Over(){
     quizContainer.remove();
+    document.getElementById("countDownTimer").style.display="none";
     document.getElementById("userResponse").innerHTML="";
     document.getElementById("endGame").style.display="block";
     
+};
+
+//Clear
+function clearQuiz(){
+time_remaining=75;
+time_start=true;
+end=false;
+i=0
+score=0;
 };

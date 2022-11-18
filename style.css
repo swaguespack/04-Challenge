@@ -15,6 +15,10 @@ body{
     align-items: center;
     margin: 0 auto;
 }
+#timer{
+    color:#5E00A3;
+    float: right;
+}
 body button{
     background-color: #5E00A3;
     border-radius: 10px;
