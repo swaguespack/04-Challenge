@@ -9,13 +9,14 @@ var choiceC = document.getElementById("choiceC");
 var choiceD = document.getElementById("choiceD");
 var score = 0;
 let i =0;
+var time_remaining = 75;
 /*
    //Points calculator
     var points = function(){
     score = score + 10;
     console.log("You have " + score + " points!");
     };
-var time_remaining = 75;
+
 var timerInterval;
 var end = false;
 var timer = function() {
@@ -86,16 +87,23 @@ choiceA.addEventListener('click',function(event){
     correctAnswer= quizQuestions[i].correctAnswer;
 
     //Check if user input is correct answer
+    //If correct, flash button to green and display text
     if (0 === correctAnswer){
         document.getElementById("userResponse").innerHTML = "That is Correct!";
-        document.getElementById("button").style.background='#13E348';
-    
+        setTimeout(function(){
+            document.getElementById("userResponse").innerHTML = "";
+            }, 500)
 
 }else{
+    time_remaining -= 10;
     document.getElementById("userResponse").innerHTML = "Incorrect";
+    setTimeout(function(){
+        document.getElementById("userResponse").innerHTML = "";
+        }, 500)
+    
 }
 if (i>= quizQuestions.length -1){
-quiz_over();
+quiz_Over();
 } else {
     i++
     startQuizQuestions();
@@ -111,10 +119,18 @@ choiceB.addEventListener('click',function(event){
     //Check if user input is correct answer
     if (1 === correctAnswer){
         document.getElementById("userResponse").innerHTML = "That is Correct!";
+        setTimeout(function(){
+            document.getElementById("userResponse").innerHTML = "";
+            }, 500)
+            
     
 
 }else{
+    time_remaining -= 10;
     document.getElementById("userResponse").innerHTML = "Incorrect";
+    setTimeout(function(){
+        document.getElementById("userResponse").innerHTML = "";
+        }, 500)
 }
 if (i>= quizQuestions.length -1){
     quiz_Over();
@@ -132,11 +148,19 @@ choiceC.addEventListener('click',function(event){
 
     //Check if user input is correct answer
     if (2 === correctAnswer){
-        document.getElementById("choiceC").style.background='#13E348';
         document.getElementById("userResponse").innerHTML = "That is Correct!";
+        setTimeout(function(){
+            document.getElementById("userResponse").innerHTML = "";
+            }, 500)
+            
 
 }else{
+    time_remaining -= 10;
     document.getElementById("userResponse").innerHTML = "Incorrect";
+    setTimeout(function(){
+        document.getElementById("userResponse").innerHTML = "";
+        }, 500)
+        
 }
 if (i>= quizQuestions.length -1){
 quiz_Over();
@@ -155,10 +179,17 @@ choiceD.addEventListener('click',function(event){
     //Check if user input is correct answer
     if (3 === correctAnswer){
         document.getElementById("userResponse").innerHTML = "That is Correct!";
-    
+        setTimeout(function(){
+            document.getElementById("userResponse").innerHTML = "";
+            }, 500)
+            
 
 }else{
+    time_remaining -= 10;
     document.getElementById("userResponse").innerHTML = "Incorrect";
+    setTimeout(function(){
+        document.getElementById("userResponse").innerHTML = "";
+        }, 500)
 }
 if (i>= quizQuestions.length -1){
 quiz_Over();
