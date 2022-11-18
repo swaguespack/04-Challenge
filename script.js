@@ -94,6 +94,8 @@ choiceA.addEventListener('click',function(event){
             document.getElementById("userResponse").innerHTML = "";
             }, 500)
 
+        score = score + 10;
+
 }else{
     time_remaining -= 10;
     document.getElementById("userResponse").innerHTML = "Incorrect";
@@ -122,9 +124,9 @@ choiceB.addEventListener('click',function(event){
         setTimeout(function(){
             document.getElementById("userResponse").innerHTML = "";
             }, 500)
-            
-    
 
+        score = score + 10;
+    
 }else{
     time_remaining -= 10;
     document.getElementById("userResponse").innerHTML = "Incorrect";
@@ -152,6 +154,8 @@ choiceC.addEventListener('click',function(event){
         setTimeout(function(){
             document.getElementById("userResponse").innerHTML = "";
             }, 500)
+
+        score = score + 10;
             
 
 }else{
@@ -182,8 +186,8 @@ choiceD.addEventListener('click',function(event){
         setTimeout(function(){
             document.getElementById("userResponse").innerHTML = "";
             }, 500)
-            
-
+        
+        score = score + 10;
 }else{
     time_remaining -= 10;
     document.getElementById("userResponse").innerHTML = "Incorrect";
@@ -204,6 +208,7 @@ quiz_Over();
 //Quiz Over
 function quiz_Over(){
     quizContainer.remove();
+    document.getElementById("userResponse").innerHTML="";
     document.getElementById("endGame").style.display="block";
     
 };
