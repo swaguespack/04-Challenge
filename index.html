@@ -53,16 +53,18 @@
 
 <div id="endGame" style="display: none">
 <h2> Game Over </h2>
-Your Score: <var id="finalScore"></var>
+Your Score: <span id="finalScore"></span>
+</br>
 Initials: <input type="text" value="" id="initials">
-<input type="button" value="submit" id="submitInitials" onclick="submitScore()">
+</br>
+<input type="button" value="submit" onclick="submitScore()">
 </div>
 
-<div id="highSoresPage" style="display: none">
-    <h2> High Schores</h2>
+<div id="highScoresPage" style="display: none">
+    <h2> High Scores</h2>
     <div id="highScores"></div>
     <input type="button" value="Go Back" id="goBack" onclick="goHome()">
-    <input type="button" id="Clear Highscores" value ="Clear" onclick="clearScores()">
+    <input type="button" id="clearHighscores" value ="Clear" onclick="clearScores()">
 </div>
     
         <script src="script.js"></script>

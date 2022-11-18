@@ -56,7 +56,7 @@ var quizQuestions = [{
 ];
 
 
-// Remove Home Page Container & Start Quiz
+// Change Display of Home Page Container & Start Quiz
 startBtn.addEventListener("click",function() {
     document.getElementById("homeContainer").style.display="none";
     quizContainer.style.display = "block";
@@ -210,7 +210,7 @@ function quiz_Over(){
     document.getElementById("countDownTimer").style.display="none";
     document.getElementById("scoreTrack").style.display="none";
     document.getElementById("userResponse").innerHTML="";
-    document.getElementById("finalScore").innerHTML="";
+    document.getElementById("finalScore").innerHTML= score;
     document.getElementById("endGame").style.display="block";
 };
 //Submit and view high scores
@@ -221,7 +221,6 @@ function submitScore(){
 };
 
 function viewHighScores(){
-    document.getElementById("quizContainer").style.display="none";
     document.getElementById("endGame").style.display= "none";
     document.getElementById("highScoresPage").style.display="block";
 
@@ -230,7 +229,7 @@ function viewHighScores(){
          output = output + "  " + highScores[j];
     }
     document.getElementById("highScores").innerHTML= output;                
-     clear_up();
+     clearQuiz();
 
 };
 
@@ -238,11 +237,20 @@ function viewHighScores(){
 function goHome(){
     document.getElementById("highScoresPage").style.display="none";
     document.getElementById("homeContainer").style.display="block";
+    countDownTimer.style.display="block";
+    document.getElementById("score").style.display="block";
+    document.getElementById("scoreTrack").style.display="block";
     clearQuiz();
-}
+};
 
-//Clear
+//Clear high scores
+function clearScores(){
+    highScores = [];
+};
+
+//Clear page
 function clearQuiz(){
+startQuizQuestions();
 time_remaining=75;
 time_start=true;
 end=false;
