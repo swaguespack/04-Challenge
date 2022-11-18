@@ -220,7 +220,7 @@ function quiz_Over(){
 //Submit and view high scores
 
 function submitScore(){
-    highScores.push(document.getElementById("initials").value+" "+score);
+   highScores.push(document.getElementById("initials").value+" "+score);
     viewHighScores();
 };
 
@@ -229,17 +229,17 @@ function viewHighScores(){
     document.getElementById("quizContainer").style.display= "none";
     document.getElementById("homeContainer").style.display= "none";
     document.getElementById("highScoresPage").style.display="block";
-
-
-    output="";
-    for(let j=0; j<highScores.length; j++){
-
-         output = output + "  " + highScores[j];
-    }
-    document.getElementById("highScores").innerHTML= output;                
+    let list = document.getElementById("highScores");
+    highScores.forEach((item)=>{
+        let li = document.createElement("li");
+        li.innerText = item;
+        list.appendChild(li);
+    });    
+    document.getElementById("highScores").innerHTML= highScores.list;       
      clearQuiz();
 
 };
+
 
 //Return to home page
 function goHome(){
