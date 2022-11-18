@@ -86,7 +86,7 @@ choiceA.addEventListener('click',function(event){
     correctAnswer= quizQuestions[i].correctAnswer;
 
     //Check if user input is correct answer
-    //If correct, flash button to green and display text
+    //If correct, display text
     if (0 === correctAnswer){
         document.getElementById("userResponse").innerHTML = "That is Correct!";
         setTimeout(function(){
@@ -228,14 +228,9 @@ function viewHighScores(){
     document.getElementById("endGame").style.display= "none";
     document.getElementById("quizContainer").style.display= "none";
     document.getElementById("homeContainer").style.display= "none";
-    document.getElementById("highScoresPage").style.display="block";
-    let list = document.getElementById("highScores");
-    highScores.forEach((item)=>{
-        let li = document.createElement("li");
-        li.innerText = item;
-        list.appendChild(li);
-    });    
-    document.getElementById("highScores").innerHTML= highScores.list;       
+    document.getElementById("highScoresPage").style.display="block"; 
+    
+    document.getElementById("highScores").textContent= highScores.join('\n');       
      clearQuiz();
 
 };
