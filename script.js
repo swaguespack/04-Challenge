@@ -230,8 +230,10 @@ function viewHighScores(){
     document.getElementById("homeContainer").style.display= "none";
     document.getElementById("highScoresPage").style.display="block";
 
+
     output="";
     for(let j=0; j<highScores.length; j++){
+
          output = output + "  " + highScores[j];
     }
     document.getElementById("highScores").innerHTML= output;                
