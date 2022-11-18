@@ -227,6 +227,7 @@ function submitScore(){
 function viewHighScores(){
     document.getElementById("endGame").style.display= "none";
     document.getElementById("quizContainer").style.display= "none";
+    document.getElementById("homeContainer").style.display= "none";
     document.getElementById("highScoresPage").style.display="block";
 
     output="";
