@@ -51,6 +51,26 @@ br{
     content:"";
     margin-top: 5px;
 }
+table{
+    display:flexbox;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+th,td{
+    border-style: solid;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 40px;
+}
+#highScores{
+    margin-top:10px;
+    padding:20px;
+ 
+
+}
 
 .startPage button{
     display: inline-block;

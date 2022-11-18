@@ -64,7 +64,21 @@ Initials: <input type="text" value="" id="initials">
 
 <div id="highScoresPage" style="display: none">
     <h2> High Scores</h2>
+    <br>
+    <br>
+<table id="scoreTable">
+<tr>
+    <th>Initials</th>
+    <th>Score</th>
+</tr>
+<tr>
+<td><span id="initials"></span></td>
+<td><span id="finalScore"></span></td>
+</tr>
+</table>
     <div id="highScores"></div>
+    <br>
+    <br>
     <input type="button" value="Go Back" onclick="goHome()">
     <input type="button" id="clearHighscores" value ="Clear" onclick="clearScores()">
 </div>
