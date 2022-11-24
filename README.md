@@ -18,4 +18,4 @@ The following image shows the Web API Code Quiz appearance and functionality:
 
 ## Link
 
-https://swaguespack.github.io/04-Challenge/
+https://swaguespack.github.io/04-Challenge-Coding-Quiz/
